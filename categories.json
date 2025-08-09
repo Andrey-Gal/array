@@ -1,14 +1,22 @@
 [
-    {
-        "title": "Авто1",
-        "link": "/auto"
-    },
-    {
-        "title": "Недвижимость",
-        "link": "/realty"
-    },
-    {
-        "title": "Одежд3",
-        "link": "/clothes"
-    }
+  {
+    "title": "Авто",
+    "link": "auto.html",
+    "image": "images/auto.jpg"
+  },
+  {
+    "title": "Недвижимость",
+    "link": "realty.html",
+    "image": "images/realty.jpg"
+  },
+  {
+    "title": "Одежда",
+    "link": "clothes.html",
+    "image": "images/clothes.jpg"
+  },
+  {
+    "title": "Услуги",
+    "link": "services.html",
+    "image": "images/services.jpg"
+  }
 ]

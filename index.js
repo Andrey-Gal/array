@@ -1,22 +1,22 @@
-const appNode = document.querySelector('.js-app')
+const appNode = document.querySelector('.js-app');
 
 function render(categories) {
-    let categoriesHTML = ''
-
-    for (i = 0; i < categories.length; i++) {
-        categoriesHTML += `
-            <a class="category" href="${categories[i].link}">
-                <p class="category__title">${categories[i].title}</p>
-            </a>
-        `
-    }
-
-    appNode.innerHTML = categoriesHTML
+  const cards = categories.map(c => {
+    const bg = c.image ? ` style="background-image:url('${c.image}')"` : '';
+    // link — относительный файл (auto.html и т.п.)
+    return `
+      <a class="category" href="${c.link}"${bg}>
+        <p class="category__title">${c.title}</p>
+      </a>
+    `;
+  });
+  appNode.innerHTML = cards.join('');
 }
 
-
 fetch('categories.json')
-    .then((response) => response.json())
-    .then((categories) => {
-        render(categories)
-    })
+  .then(r => r.json())
+  .then(render)
+  .catch(err => {
+    console.error('Не удалось загрузить categories.json', err);
+    appNode.innerHTML = '<p>Ошибка загрузки категорий.</p>';
+  });
