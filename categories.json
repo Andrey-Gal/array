@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Авто1",
+        "link": "/auto"
+    },
+    {
+        "title": "Недвижимость",
+        "link": "/realty"
+    },
+    {
+        "title": "Одежд3",
+        "link": "/clothes"
+    }
+]
